@@ -7,39 +7,72 @@
     <link rel="stylesheet" href="sign.css">
 </head>
 <body>
-    <div class="container">
+    <div class="main">
 
         <div class="form">
             <h1 class="heading">Register To Save A Life</h1>
 
-           <!-- <form action=""> -->
-                <!-- <div class="name"> -->
-                    <input type="text" placeholder="Name" autocomplete="off" id="name" required>
 
-                    <input type="email" placeholder="Email" autocomplete="off" id="email" required>
-                </div>
-        
-                <!-- <div class="password"> -->
-                    <input type="password" placeholder="Password" autocomplete="off" id="password" required>
+                   
+                   <div class="name">
+                        <div class="info">
+                            <input type="text" placeholder="*First Name" autocomplete="off" id="name" required>
 
-                    <input type="password" placeholder="Password" autocomplete="off" id="password" required>
-                </div>
+                            <input type="text" placeholder="*Last Name" autocomplete="off" id="name" required>
+                        </div>
+
+                        <div class="pass">
+                            <input type="email" placeholder="Email" autocomplete="off" id="pass" required>
+
+                            <input type="number" placeholder="Phone Number" autocomplete="off" id="pass" required>
+                        </div>
+
+                        <div class="pass">
+                            <input type="password" placeholder="*Password" autocomplete="off" id="pass" required>
+
+                            <input type="password" placeholder="*Confirm Password" autocomplete="off" id="pass" required>
+                        </div>
+                   </div>
+                    
 
                 <button class="submit-btn" onclick="register()">Register</button>
 
                 <a href="login.html" class="link">already have an account? log in here</a>
-           </form>
         </div>
     </div>
 
-   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
-   <script src=" https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCVc1cgyG6yvLz7HrOgVsH2pOKq9Nw2qjA",
+          authDomain: "last-project-be73f.firebaseapp.com",
+          projectId: "last-project-be73f",
+          storageBucket: "last-project-be73f.appspot.com",
+          messagingSenderId: "138764539970",
+          appId: "1:138764539970:web:95005a5e26d1f2c8bb35db",
+          measurementId: "G-YLD3VSZFT6"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
 
-   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js"></script>
+        // make auth and firestore 
+        const auth = firebase.auth();
+        const db = firebase.firestore();
 
-   <!-- TODO: Add SDKs for Firebase products that you want to use
-   https://firebase.google.com/docs/web/setup#available-libraries -->
+        //update firestore settings
+        db.settings({ timestampsInSnapshots: true })
+
+      </script>
 
     <script src="login.js"></script>
 </body>
