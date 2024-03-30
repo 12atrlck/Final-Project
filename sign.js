@@ -8,6 +8,16 @@ form.forEach((item, i) => {
     }, i*500);
 })
 
+function showSidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'flex'
+}
+
+function hideSidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'none'
+}
+
 function register(){
     //auth 
 const signupForm = document.querySelector('#signup-form');
